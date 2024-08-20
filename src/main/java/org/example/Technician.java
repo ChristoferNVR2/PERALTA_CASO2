@@ -26,4 +26,14 @@ public class Technician extends Person {
     public String getInfo() {
         return "Technician: " + name + ", Department: " + department;
     }
+
+    // Getters
+
+    public String getTechnicianID() {
+        return technicianID;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
 }

@@ -7,16 +7,21 @@ import java.util.List;
 public class AnalysisOrder {
     private String orderID;
     private Date orderDate;
-    private boolean isOrderedBy;
     private Doctor orderedBy;
     private Patient patient;
     private List<Analysis> analysisList;
 
-    public AnalysisOrder(String orderID, Date orderDate, boolean isOrderedBy, Doctor orderedBy, Patient patient) {
+    public AnalysisOrder(String orderID, Date orderDate, Doctor orderedBy, Patient patient) {
         this.orderID = orderID;
         this.orderDate = orderDate;
-        this.isOrderedBy = isOrderedBy;
-//        this.orderedBy = orderedBy;
+        this.orderedBy = orderedBy;
+        this.patient = patient;
+        this.analysisList = new ArrayList<>();
+    }
+
+    public AnalysisOrder(String orderID, Date orderDate, Patient patient) {
+        this.orderID = orderID;
+        this.orderDate = orderDate;
         this.patient = patient;
         this.analysisList = new ArrayList<>();
     }
@@ -30,6 +35,8 @@ public class AnalysisOrder {
         return 0.0;
     }
 
+    // Getters
+
     public String getOrderID() {
         return orderID;
     }
@@ -40,5 +47,13 @@ public class AnalysisOrder {
 
     public Doctor getOrderedBy() {
         return orderedBy;
+    }
+
+    public Patient getPatient() {
+        return patient;
+    }
+
+    public List<Analysis> getAnalysisList() {
+        return analysisList;
     }
 }

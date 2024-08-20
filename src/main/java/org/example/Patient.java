@@ -28,4 +28,14 @@ public class Patient extends Person {
     public String getInfo() {
         return "Patient: " + name + ", Patient ID: " + patientID;
     }
+
+    // Getters
+
+    public String getPatientID() {
+        return patientID;
+    }
+
+    public List<String> getMedicalHistory() {
+        return medicalHistory;
+    }
 }

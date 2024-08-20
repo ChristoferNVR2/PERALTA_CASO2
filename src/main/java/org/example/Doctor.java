@@ -20,4 +20,14 @@ public class Doctor extends Person {
     public String getInfo() {
         return "Doctor: " + name + ", Specialization: " + specialization;
     }
+
+    // Getters
+
+    public String getSpecialization() {
+        return specialization;
+    }
+
+    public String getLicenseNumber() {
+        return licenseNumber;
+    }
 }

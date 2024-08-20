@@ -22,5 +22,19 @@ public class Report {
         // Implement report summary logic
         return "Summary: " + reportData;
     }
+
+    // Getters
+
+    public String getReportID() {
+        return reportID;
+    }
+
+    public String getReportData() {
+        return reportData;
+    }
+
+    public Date getCreationDate() {
+        return creationDate;
+    }
 }
 

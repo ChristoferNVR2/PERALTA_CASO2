@@ -20,6 +20,8 @@ public class LabAttention {
         // Implement patient attention logic
     }
 
+    // Getters
+
     public String getAttentionID() {
         return attentionID;
     }

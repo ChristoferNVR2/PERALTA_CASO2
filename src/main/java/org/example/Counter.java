@@ -25,6 +25,8 @@ public class Counter {
         return new LabAttention("Attention ID", order.getOrderDate());
     }
 
+    // Getters
+
     public String getCounterId() {
         return counterID;
     }

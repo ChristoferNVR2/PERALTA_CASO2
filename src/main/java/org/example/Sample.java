@@ -21,5 +21,19 @@ public class Sample {
     public void storeSample() {
         // Implement sample storage logic
     }
+
+    // Getters
+
+    public String getSampleID() {
+        return sampleID;
+    }
+
+    public String getSampleType() {
+        return sampleType;
+    }
+
+    public Date getCollectionDate() {
+        return collectionDate;
+    }
 }
 

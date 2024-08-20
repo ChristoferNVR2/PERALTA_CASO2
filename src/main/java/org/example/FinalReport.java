@@ -19,5 +19,15 @@ public class FinalReport extends Report {
     public String getFinalSummary() {
         return super.getReportSummary() + "\nConclusion: " + conclusion;
     }
+
+    // Getters
+
+    public String getConclusion() {
+        return conclusion;
+    }
+
+    public Technician getApprovedBy() {
+        return approvedBy;
+    }
 }
 

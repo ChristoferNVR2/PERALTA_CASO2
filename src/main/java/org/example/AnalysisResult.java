@@ -13,13 +13,23 @@ public class AnalysisResult {
         this.resultDate = resultDate;
     }
 
+    public boolean isNormal() {
+        // Implement logic to check if the result is normal
+        return true;
+    }
+
+    // Getters
+
+    public String getResultID() {
+        return resultID;
+    }
+
     public String getResultData() {
         return resultData;
     }
 
-    public boolean isNormal() {
-        // Implement logic to check if the result is normal
-        return true;
+    public Date getResultDate() {
+        return resultDate;
     }
 }
 

@@ -18,4 +18,18 @@ public class Department {
     public String getDepartmentDetails() {
         return "Department: " + name + ", Location: " + location;
     }
+
+    // Getters
+
+    public String getDepartmentID() {
+        return departmentID;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getLocation() {
+        return location;
+    }
 }
