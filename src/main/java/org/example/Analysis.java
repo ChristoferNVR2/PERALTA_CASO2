@@ -3,20 +3,14 @@ package org.example;
 import java.util.Date;
 
 public class Analysis {
-    private String analysisID;
     private String type;
-    private String status;
+    private String name;
 
-    public Analysis(String analysisID, String type, String status) {
-        this.analysisID = analysisID;
+    public Analysis(String type, String name) {
         this.type = type;
-        this.status = status;
+        this.name = name;
     }
 
-    public AnalysisResult perform() {
-        // Implement analysis logic
-        return new AnalysisResult("resultID", "resultData", new Date());
-    };
     public String getDetails() {
         // Implement logic to get analysis details
         return "Details";
@@ -24,15 +18,15 @@ public class Analysis {
 
     // Getters
 
-    public String getAnalysisID() {
-        return analysisID;
-    }
-
     public String getType() {
         return type;
     }
 
-    public String getStatus() {
-        return status;
+    public String getName() {
+        return name;
     }
+
+    static Analysis bloodCount = new Analysis("bloodTest", "Hemograma");
+    static Analysis urea = new Analysis("urineTest", "Urea");
+    static Analysis creatinine = new Analysis("urineTest", "Creatinina");
 }

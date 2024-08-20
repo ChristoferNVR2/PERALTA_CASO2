@@ -3,12 +3,10 @@ package org.example;
 public class Department {
     private String departmentID;
     private String name;
-    private String location;
 
-    public Department(String departmentID, String name, String location) {
+    public Department(String departmentID, String name) {
         this.departmentID = departmentID;
         this.name = name;
-        this.location = location;
     }
 
     public void assignTechnician(Technician technician) {
@@ -16,7 +14,7 @@ public class Department {
     }
 
     public String getDepartmentDetails() {
-        return "Department: " + name + ", Location: " + location;
+        return "Department: " + name;
     }
 
     // Getters
@@ -29,7 +27,5 @@ public class Department {
         return name;
     }
 
-    public String getLocation() {
-        return location;
-    }
+    static Department laboratory = new Department("departmentID1", "Laboratory");
 }

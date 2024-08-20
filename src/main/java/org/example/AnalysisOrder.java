@@ -8,26 +8,26 @@ public class AnalysisOrder {
     private String orderID;
     private Date orderDate;
     private Doctor orderedBy;
-    private Patient patient;
-    private List<Analysis> analysisList;
+    private List<AnalysisResult> analysisResultList;
+    private Report report;
 
-    public AnalysisOrder(String orderID, Date orderDate, Doctor orderedBy, Patient patient) {
+    public AnalysisOrder(String orderID, Date orderDate, Doctor orderedBy, List<AnalysisResult> analysisResultList, Report report) {
         this.orderID = orderID;
         this.orderDate = orderDate;
         this.orderedBy = orderedBy;
-        this.patient = patient;
-        this.analysisList = new ArrayList<>();
+        this.analysisResultList = analysisResultList;
+        this.report = report;
     }
 
-    public AnalysisOrder(String orderID, Date orderDate, Patient patient) {
+    public AnalysisOrder(String orderID, Date orderDate, List<AnalysisResult> analysisResultList, Report report) {
         this.orderID = orderID;
         this.orderDate = orderDate;
-        this.patient = patient;
-        this.analysisList = new ArrayList<>();
+        this.analysisResultList = analysisResultList;
+        this.report = report;
     }
 
-    public void addAnalysis(Analysis analysis) {
-        analysisList.add(analysis);
+    public void addAnalysis(AnalysisResult analysis) {
+        analysisResultList.add(analysis);
     }
 
     public double getTotalCost() {
@@ -49,11 +49,21 @@ public class AnalysisOrder {
         return orderedBy;
     }
 
-    public Patient getPatient() {
-        return patient;
+    public List<AnalysisResult> getAnalysisResultList() {
+        return analysisResultList;
     }
 
-    public List<Analysis> getAnalysisList() {
-        return analysisList;
+    public void setAnalysisResultList(List<AnalysisResult> analysisResultList) {
+        this.analysisResultList = analysisResultList;
     }
+
+    static AnalysisOrder order1 = new AnalysisOrder(
+        "orderID1",
+        new Date(),
+        Doctor.oswaldoMozo,
+        AnalysisResult.analysisResultlist(),
+        Report.report1
+    );
+
 }
+

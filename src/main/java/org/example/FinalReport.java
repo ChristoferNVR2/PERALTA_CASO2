@@ -1,33 +1,26 @@
 package org.example;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
-public class FinalReport extends Report {
-    private String conclusion;
-    private Technician approvedBy;
+public class FinalReport {
+    private List<Report> reportList;
+    private Technician createdBy;
 
-    public FinalReport(String reportID, String reportData, Date creationDate, String conclusion, Technician approvedBy) {
-        super(reportID, reportData, creationDate);
-        this.conclusion = conclusion;
-        this.approvedBy = approvedBy;
+    public FinalReport(List<Report> reportList, Technician createdBy) {
+        this.reportList = reportList;
+        this.createdBy = createdBy;
     }
 
-    public void approveReport(Technician technician) {
-        this.approvedBy = technician;
+    @Override
+    public String toString() {
+        return "FinalReport:" +
+                "\nReport List: " + reportList +
+                "\nCreated by: " + createdBy;
     }
 
-    public String getFinalSummary() {
-        return super.getReportSummary() + "\nConclusion: " + conclusion;
-    }
+    static FinalReport finalReport1 = new FinalReport(Report.analysisResultlist(), Technician.matiasCenteno);
 
-    // Getters
-
-    public String getConclusion() {
-        return conclusion;
-    }
-
-    public Technician getApprovedBy() {
-        return approvedBy;
-    }
 }
 

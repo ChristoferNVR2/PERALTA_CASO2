@@ -3,30 +3,20 @@ package org.example;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 public class Patient extends Person {
     private String patientID;
-    private List<String> medicalHistory;
 
-    public Patient(String name, int age, String gender, String address, String phone, String patientID) {
-        super(name, age, gender, address, phone);
+    public Patient(String name, int age, String gender, String dni, String address, String phone, String patientID) {
+        super(name, age, gender, dni, address, phone);
         this.patientID = patientID;
-        this.medicalHistory = new ArrayList<>();
     }
 
-    public AnalysisOrder requestAnalysisOrder(Doctor doctor) {
-        // Implement analysis order request logic
-        return new AnalysisOrder("Order ID", new Date(), doctor, this);
-    }
-
-    public void viewReport(Report report) {
-        // Implement logic to view report
-        System.out.println(report.getReportSummary());
-    }
 
     @Override
     public String getInfo() {
-        return "Patient: " + name + ", Patient ID: " + patientID;
+        return "Patient: " + name + ", Patient DNI: " + dni;
     }
 
     // Getters
@@ -35,7 +25,13 @@ public class Patient extends Person {
         return patientID;
     }
 
-    public List<String> getMedicalHistory() {
-        return medicalHistory;
-    }
+    static Patient chrisVega = new Patient(
+        "Chris Vega",
+        18,
+        "Male",
+        "Calle A 123",
+        "994199134",
+        UUID.randomUUID().toString(),
+        "74160675"
+    );
 }

@@ -1,28 +1,14 @@
 package org.example;
 
 import java.util.Date;
+import java.util.UUID;
 
-public class Counter {
+public class Counter extends Person {
     private String counterID;
-    private String location;
 
-    public Counter(String counterID, String location) {
+    public Counter(String name, int age, String gender, String dni, String address, String phone, String counterID) {
+        super(name, age, gender, dni, address, phone);
         this.counterID = counterID;
-        this.location = location;
-    }
-
-    public void registerPatient(Patient patient) {
-        // Implement patient registration logic
-    }
-
-    public boolean processPayment(Patient patient, AnalysisOrder order) {
-        // Implement payment processing logic
-        return true;
-    }
-
-    public LabAttention scheduleLabAttention(Patient patient, AnalysisOrder order) {
-        // Implement lab attention scheduling logic
-        return new LabAttention("Attention ID", order.getOrderDate());
     }
 
     // Getters
@@ -31,8 +17,23 @@ public class Counter {
         return counterID;
     }
 
-    public String getLocation() {
-        return location;
+    @Override
+    public String getInfo() {
+        return "Counter: " + name + ", Counter DNI: " + dni;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    static Counter jheferRuiton = new Counter(
+        "Jhefer Ruiton",
+        25,
+        "Male",
+        "74172085",
+        "Calle H 123",
+        "987872192",
+        UUID.randomUUID().toString()
+    );
 
 }

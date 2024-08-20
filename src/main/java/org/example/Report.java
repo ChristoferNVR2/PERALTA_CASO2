@@ -1,26 +1,18 @@
 package org.example;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class Report {
-    protected String reportID;
-    protected String reportData;
-    protected Date creationDate;
+    private String reportID;
+    private Date creationDate;
+    private Technician createdBy;
 
-    public Report(String reportID, String reportData, Date creationDate) {
+    public Report(String reportID, Date creationDate, Technician createdBy) {
         this.reportID = reportID;
-        this.reportData = reportData;
         this.creationDate = creationDate;
-    }
-
-    public String generateReport() {
-        // Implement report generation logic
-        return reportData;
-    }
-
-    public String getReportSummary() {
-        // Implement report summary logic
-        return "Summary: " + reportData;
+        this.createdBy = createdBy;
     }
 
     // Getters
@@ -29,12 +21,16 @@ public class Report {
         return reportID;
     }
 
-    public String getReportData() {
-        return reportData;
-    }
-
     public Date getCreationDate() {
         return creationDate;
     }
+
+    static List<Report> analysisResultlist() {
+        List<Report> analysisResultList = new ArrayList<>();
+        analysisResultList.add(report1);
+        return analysisResultList;
+    }
+
+    static Report report1 = new Report("reportID1", new Date(), Technician.matiasCenteno);
 }
 
