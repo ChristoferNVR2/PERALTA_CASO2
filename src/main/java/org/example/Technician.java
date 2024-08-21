@@ -30,6 +30,10 @@ public class Technician extends Person {
         return technicianID;
     }
 
+    public Department getAssignedDepartment() {
+        return assignedDepartment;
+    }
+
     static Technician matiasCenteno = new Technician(
         "Matias Centeno",
         30,

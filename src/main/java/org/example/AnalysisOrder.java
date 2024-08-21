@@ -53,6 +53,10 @@ public class AnalysisOrder {
         return analysisResultList;
     }
 
+    public Report getReport() {
+        return report;
+    }
+
     public void setAnalysisResultList(List<AnalysisResult> analysisResultList) {
         this.analysisResultList = analysisResultList;
     }
